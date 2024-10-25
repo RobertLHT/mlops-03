@@ -14,15 +14,15 @@ def ingest_files(**kwargs) -> pd.DataFrame:
 
     for year, months in [(2024, (1, 3))]:
         for i in range(*months):
-            response = requests.get(
-                'taxi/green'
-                f'/{year}/{i:02d}.parquet'
-            )
+            # response = requests.get(
+            #     'taxi/green'
+            #     f'/{year}/{i:02d}.parquet'
+            # )
 
-            if response.status_code != 200:
-                raise Exception(response.text)
+            # if response.status_code != 200:
+            #     raise Exception(response.text)
 
-            df = pd.read_parquet(BytesIO(response.content))
+            df = pd.read_parquet(f'taxi/green/{year}/{i:02d}.parquet')
             dfs.append(df)
 
     return pd.concat(dfs)
