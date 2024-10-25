@@ -53,6 +53,23 @@ blocks:
   type: custom
   upstream_blocks: []
   uuid: load_models
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: unit_2_training/markdowns/test_block_on_mac.md
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Test block on mac
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: test_block_on_mac
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
