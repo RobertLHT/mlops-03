@@ -154,6 +154,5 @@ widgets:
   status: failed
   timeout: null
   type: chart
-  upstream_blocks:
-  - training_set
+  upstream_blocks: []
   uuid: training_set_table_x1
