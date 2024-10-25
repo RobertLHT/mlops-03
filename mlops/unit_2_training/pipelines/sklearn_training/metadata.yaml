@@ -20,40 +20,40 @@ blocks:
   color: null
   configuration:
     file_source:
-      path: unit_2_training/global_data_products/training_set_unit2.py
-    global_data_product:
-      uuid: training_set
+      path: unit_2_training/data_exporters/test_print.py
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: training set unit2
+  name: test print
   retry_config: null
-  status: not_executed
+  status: updated
   timeout: null
-  type: global_data_product
+  type: data_exporter
   upstream_blocks: []
-  uuid: training_set_unit2
+  uuid: test_print
 - all_upstream_blocks_executed: true
   color: null
   configuration:
     file_source:
-      path: unit_2_training/global_data_products/training_set_unit3.py
+      path: unit_2_training/global_data_products/training_set.py
     global_data_product:
       uuid: training_set
-  downstream_blocks: []
+  downstream_blocks:
+  - training_set_table_x1
+  - hyperparameter_tuning/sklearn
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: training set unit3
+  name: training set
   retry_config: null
-  status: not_executed
+  status: executed
   timeout: null
   type: global_data_product
   upstream_blocks: []
-  uuid: training_set_unit3
+  uuid: training_set
 - all_upstream_blocks_executed: true
   color: teal
   configuration:
@@ -102,10 +102,11 @@ blocks:
   language: python
   name: hyperparameter tuning/sklearn
   retry_config: null
-  status: failed
+  status: executed
   timeout: null
   type: transformer
   upstream_blocks:
+  - training_set
   - load_models
   uuid: hyperparameter_tuning/sklearn
 cache_block_output_in_memory: false
@@ -132,6 +133,27 @@ type: python
 uuid: sklearn_training
 variables:
   max_evaluations: 5
-  random_state: 42
+  random_state: 70
 variables_dir: /home/src/mage_data/unit_2_training
-widgets: []
+widgets:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    chart_type: table
+    group_by: []
+    limit: 10
+    x: x
+    y: y
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: training_set_table_x1
+  retry_config: null
+  status: failed
+  timeout: null
+  type: chart
+  upstream_blocks:
+  - training_set
+  uuid: training_set_table_x1
