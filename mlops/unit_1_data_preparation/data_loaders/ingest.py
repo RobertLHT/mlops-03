@@ -15,7 +15,7 @@ def ingest_files(**kwargs) -> pd.DataFrame:
     for year, months in [(2024, (1, 3))]:
         for i in range(*months):
             response = requests.get(
-                'https://github.com/mage-ai/datasets/raw/master/taxi/green'
+                'taxi/green'
                 f'/{year}/{i:02d}.parquet'
             )
 
