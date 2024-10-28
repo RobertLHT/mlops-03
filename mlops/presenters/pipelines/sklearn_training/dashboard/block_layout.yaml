@@ -1,4 +1,8 @@
 blocks:
+  bright_grimoire:
+    name: bright grimoire
+    type: chart
+    uuid: bright_grimoire
   completed_pipeline_runs_daily_sklearn_training_w6:
     configuration:
       chart_type: time series line chart
@@ -64,6 +68,10 @@ blocks:
     name: Pipeline runs daily
     type: chart
     uuid: pipeline_runs_daily_sklearn_training_b8
+  remarkable_firefly:
+    name: remarkable firefly
+    type: chart
+    uuid: remarkable_firefly
   trigger_active_status_sklearn_training_m3:
     configuration:
       chart_type: bar chart
@@ -122,4 +130,8 @@ layout:
 - - block_uuid: failed_pipeline_runs_daily_sklearn_training_v0
     width: 1
 - - block_uuid: elemental_glacier
+    width: 1
+- - block_uuid: remarkable_firefly
+    width: 1
+- - block_uuid: bright_grimoire
     width: 1

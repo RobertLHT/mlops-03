@@ -80,10 +80,6 @@ blocks:
       metrics:
       - aggregation: average
         column: rmse_Booster
-      - aggregation: average
-        column: rmse_LinearRegression
-      - aggregation: average
-        column: rmse_Lasso
       time_interval: minute
       x_axis_label_format: h:mm
       x_grid_lines_hidden: true
